@@ -3,7 +3,14 @@ import ThemedButton from "./ThemedButton";
 import DarkModeToggle from "./DarkModeToggle";
 import defaultUser from "../data";
 
+import { UserContext } from "../context/user";
+
+
 function Header({ theme, setTheme, user, setUser }) {
+
+  const { user, setUser }= useContext(UserContext);
+
+
   function handleLogin() {
     if (user) {
       setUser(null);
